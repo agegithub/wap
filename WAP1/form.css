@@ -1,0 +1,26 @@
+body {
+    background-color: url(../WAP2/Images1/background.png);
+    font-family: sans-serif;
+}
+.submission-form{
+    max-width: 500px;
+    margin: 2rem auto;
+    border: 2px solid #e74c3c;
+    padding: 2rem;
+    background-image: url(../WAP2/Images1/banner.png);
+}
+h1{
+text-align: center;
+}
+.submission-form input[type = "submit"]{
+    background-image: yellow;
+    margin-left: 15px;
+
+}
+.submission-form input[type="reset"]{
+    background-color: yellow;
+    margin-left: 185px;
+}
+.submission-form p{
+    color: red;
+}
