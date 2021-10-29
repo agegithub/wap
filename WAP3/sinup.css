@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.header {
+    text-align: center;
+    background-color:antiquewhite;
+    color: black;
+    font-size: 20px;
+    align-content: center;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.header h1 span#super{
+    position: relative; top: -0.5em; font-size: 80%;
+    color: blue;
+}
+
+.header h1 span#black{
+    color: black;
+}
+
+.header h1 span#blue{
+    color: blue;
+}
+
+.form p{
+    color: red;
+}
+
+.form input[type='submit']{
+    background-color:lightsalmon;
+}
+
+.form {
+    width: 450px;
+    height: 290px;
+    margin-left: 300px;
+}
+
+#red{
+    color: red;
+}
+
+.form label, input {
+    padding-left: 5px;
+}
+
+
+.submission-form input{
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: .25rem;
+}
+
+.submission-form fieldset legend{
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: #343050;
+}
+
+.submission-form fieldset{
+    /* background-color:#e0e0ff; */
+    background-color: #e0e0ff;
+}
+
+#sendBtn{
+    border: 0;
+    background-color: #343050;
+    padding: .5rem;
+    color:white;
+    margin: 1rem 0;
+    width: auto;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#sendBtn:hover{
+    background-color: aqua;
+}
+
+footer {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    background: antiquewhite;
+    height: 80px;
+    width: 100vw;
+    font-family:sans-serif;
+    padding-top: 40px;
+    color: black;
+}
+
+.links{
+    margin-top: 100px;
+    margin-left: 800px;
+    bottom: 0;
+}
