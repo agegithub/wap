@@ -1,94 +1,72 @@
 
-   
+"use strict";
+
 window.onload = function() {
-    "use strict";
 
+    var btnstart=document.getElementById("btnstart");
+    var btnstop=document.getElementById("btnstop");
+    var ddlanimations=document.getElementById("ddlanimations");
+    var ddlsizes=document.getElementById("ddlsizes");
+    var chbspeed=document.getElementById("chbspeed");
 
+    btnstart.disabled = true;
+    btnstop.disabled = true;
 
+    btnstart.onclick=onAnimationStart;
+    btnstop.onclick=onAnimationStop;
+    ddlanimations.onchange=onAnimationTypeChanged;
+    ddlsizes.onchange=onFontSizeChanged;
+    chbspeed.onchange=onTurboChecked;
+}
 
-    let textArea = document.getElementById("text-area");
-    let start = document.getElementById("start");
-    let stop = document.getElementById("stop");
-    let animation = document.getElementById("animation");
-    let fontsze = document.getElementById("fontsize");
-    let turbo = document.getElementById("turbo");
+let currentAnimation;
+const onAnimationTypeChanged  = () => {
+    currentAnimation = document.getElementById("ddlanimations").value;
 
-    let isTurbo = false;
-    let isAnimating = false;
-    let animationcontent = [];
-
-    // animation.onchange = () => {
-    //         textArea.value = ANIMATIONS[animation.value];
-    //     }
-    animation.onchange = function change() {
-        textArea.value = ANIMATIONS[animation.value];
+    if (currentAnimation != "" && !animating) document.getElementById("btnstart").disabled = false;
+    if(currentAnimation==""){
+        document.getElementById("btnstart").disabled = true;
     }
+}
 
-    fontsze.onchange = function() {
-        if (fontsze.value === "Tiny") {
-            textArea.style.fontSize = "7pt";
-        } else if (fontsze.value === "Small") {
-            textArea.style.fontSize = "10pt";
-        } else if (fontsze.value === "Medium") {
-            textArea.style.fontSize = "12pt";
-        } else if (fontsze.value === "Large") {
-            textArea.style.fontSize = "16pt";
-        } else if (fontsze.value === "Extra Large") {
-            textArea.style.fontSize = "24pt";
-        } else {
-            textArea.style.fontSize = "32pt";
-        }
+const onFontSizeChanged = () => {
+    const size = document.getElementById("ddlsizes").value;
+    document.getElementById("mytextarea").style.fontSize = size;
+}
+
+var delay = 250;
+const onTurboChecked = () => {
+    const checkBox = document.getElementById("chbspeed");
+    delay = checkBox.checked ? 50 : 250;
+    if (animation) {
+        clearInterval(animation);
+        onAnimationStart();
     }
+}
 
-
-    turbo.onclick = function() {
-        isTurbo = turbo.checked;
+let animation;
+var animating = false;
+const onAnimationStart = () => {
+    if (currentAnimation) {
+        const animArray = ANIMATIONS[currentAnimation].split("=====\n");
+        let currentFrame = 0;
+        animation = setInterval(() => {
+            document.getElementById("mytextarea").value = animArray[currentFrame];
+            currentFrame = (currentFrame === animArray.length - 1) ? 0 : currentFrame + 1;
+        }, delay);
+        document.getElementById("btnstart").disabled = true;
+        document.getElementById("btnstop").disabled = false;
+        document.getElementById("ddlanimations").disabled=true;
+        animating = true;
     }
+}
 
-
-
-    start.onclick = function() {
-        if (textArea.value === "") {
-            alert("Select Animation First!");
-        } else {
-            isAnimating = true;
-            animationcontent = textArea.value.split("=====");
-
-            let disableOnStart = document.getElementsByClassName("disable-on-start");
-            for (let i = 0; i < disableOnStart.length; i++) {
-                disableOnStart[i].disabled = true;
-            }
-
-            let disableOnStop = document.getElementById("stop");
-            disableOnStop.disabled = false;
-
-            animate(0);
-        }
-
-    }
-    stop.onclick = function() {
-        isAnimating = false;
-        textArea.value = animationcontent.join("=====");
-
-        let disableOnStart = document.getElementsByClassName("disable-on-start");
-        for (let i = 0; i < disableOnStart.length; i++) {
-            disableOnStart[i].disabled = false;
-        }
-
-        let disableOnStop = document.getElementById("stop");
-        disableOnStop.disabled = true;
-
-    }
-
-    function animate(index) {
-        if (index >= animationcontent.length) {
-            isAnimating = false
-        }
-        if (isAnimating) {
-            document.getElementById("text-area").value = animationcontent[index];
-            setTimeout(function() {
-                animate((index + 1) % animationcontent.length)
-            }, isTurbo ? 40 : 300);
-        }
+const onAnimationStop = () => {
+    if (animation) {
+        clearInterval(animation);
+        document.getElementById("btnstart").disabled = false;
+        document.getElementById("btnstop").disabled = true;
+        document.getElementById("ddlanimations").disabled=false;
+        animating = false;
     }
 }

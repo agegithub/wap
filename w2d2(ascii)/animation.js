@@ -1,5 +1,3 @@
-
-   
 // CSE 190 M, Homework 6: ASCIImation
 // This file contains the ASCII animations as large strings.
 //
@@ -16,6 +14,7 @@
 // TO ADD YOUR CUSTOM ANIMATION, CREATE YOUR OWN FILE myanimation.js AND
 // PUT YOUR CODE IN THERE.  In myanimation.js, it is legal for you to modify
 // the variables that have been declared in this file.
+"use strict";
 
 var BLANK = "";
 
