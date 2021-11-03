@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Accounts</title>
+    <link rel="stylesheet" href="accounts.css">
+    <script src="accounts.js"></script>
+</head>
+
+<body>
+    <div class="form">
+        <h2>Bank Accounts</h2>
+        <div class="form-body">
+            <label for="accountname" class="form-label">Account Name:</label>
+            <input type="text" id="accountname" name="accountname" class="form-input">
+        </div>
+
+        <div class="form-body">
+            <label for="deposite" class="form-label">Deposite</label>
+            <input type="text" id="deposite" name="deposite" class="form-input">
+        </div>
+
+        <button id="btnaddaccount">Create New Account</button>
+        <div class="form-body">
+            <textarea id="myaccounts" rows="10" cols="60" disabled></textarea>
+        </div>
+    </div>
+    <span id="output"></span>
+</body>
+
+</html>
