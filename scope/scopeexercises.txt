@@ -1,0 +1,134 @@
+1. Determine what this Javascript code will print out (without running it):
+x = 1;
+var a = 5;
+var b = 10;
+var c = function(a, b, c) {
+    var x = 10;
+    document.write(x); //1st. 10
+    document.write(a); //2nd. 8
+    var f = function(a, b, c) {
+        b = a; 
+        document.write(b); //3rd. 8
+        b = c;
+        var x = 5;
+        } 
+    f(a,b,c);
+    document.write(b); //4th.  9
+}
+c(8,9,10); 
+document.write(b); //5th. 10 
+document.write(x); //6th. 1
+
+Answer:  10  8  8  9  10  1
+
+=======================================================
+2. What is the difference between a method and function?
+
+Answer:
+
+A Method is a property of an object that contains a function definition. Methods are functions stored as object properties.
+Whereas a function is a block of code written to perform some specific set of tasks.
+We can define a function using the function keyword, followed by Name and optional parameters. 
+Body of function is enclosed in Curly braces.
+
+=======================================================
+
+3. What does 'this' refer to when used in a Java method?
+
+Answer: 
+
+'this' is a reference variable that refers to the current object.
+
+=======================================================
+4. What does 'this' refer to when used in a JavaScript method?
+
+Answer:
+
+'this' refers to the owner object.
+
+=======================================================
+5. What does 'this' refer to when used in a JavaScript constructor function?
+
+Answer:
+
+In a constructor function this does not have a value. 
+It is a substitute for the new object. 
+The value of this will become the new object when a new object is created.
+
+=======================================================
+6. Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing keyword 'this'. When f is called by x.f( ), what does 'this' refer to?
+
+Answer:
+
+'this' refers to the object x
+
+=======================================================
+7. What is a free variable in JavaScript?
+
+Answer:
+
+A variable referred to by a function that is not one of its parameters or local variables
+
+=======================================================
+8. Create an object that has properties with name = "fred" and major="music" and a property that is a function that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
+
+Answer:
+
+var obj={
+    "name": "fred",
+    "major":"music",
+    "f":function(x,y){
+        if(x>y){
+            return y;
+        }else if(x<y){
+            return x;
+        }else{
+            return (x*x)+(y*y);
+        }
+    }
+};
+
+=======================================================
+9. Write Javascript code for creating three Employee objects using the "new" keyword and a constructor function. Employee objects have the following fields: name, salary, position.
+
+Answer:
+
+function Employee(name, salary, position) {
+  this.name = name;
+  this.salary = salary;
+  this.position = position;
+}
+var frank = new Employee("Frank Lampard", 80000, "Director");
+var ken = new Person("Ken Jones", 90000, "Manager");
+var afe = new Person("Afework Fita", 180000, "Senior software engineer");
+=======================================================
+10. Write a Javascript function that takes any number of input arguments and returns the product of the arguments.
+
+Answer:
+
+function anyProduct(...n){
+    let product;
+    for(let i=0;i<n.length; i++){
+        product *=n[i];
+    }
+    return product;
+}
+=======================================================
+11. Write an arrow function that returns the maximum of its three input arguments.
+
+Answer:
+
+var maxOfThree=(num1,num2,num3)=>{
+    let largest;
+    if(num1 >= num2 && num1 >= num3) {
+        largest = num1;
+    }
+    else if (num2 >= num1 && num2 >= num3) {
+        largest = num2;
+    }
+    else {
+        largest = num3;
+    }
+
+   return largest;
+};

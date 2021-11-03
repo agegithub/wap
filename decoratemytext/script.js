@@ -1,4 +1,4 @@
-timer = null;
+
 
 function bigger($cancle) {
     var textarea = document.getElementById('textarea');
@@ -13,14 +13,18 @@ function bigger($cancle) {
     }
 
 }
-checkbox = document.getElementById('bling');
 
+bigger();
+checkbox = document.getElementById('bling');
+var timer = null;
 checkbox.addEventListener('change', e => {
     var textarea = document.getElementById("textarea");
     if (e.target.checked) {
         textarea.style.color = "green";
-        var body = document.getElementById("body");
+        //var body = document.getElementById("body");
     } else
         textarea.style.color = "black";
+
+        
 
 });
