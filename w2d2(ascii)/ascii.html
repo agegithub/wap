@@ -3,93 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ASCIImation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="ascii.css">
-    <script src="animations.js"></script>
-    <script src="ascii.js"></script>
+    <title>JS ASCII Animation</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1>CS472: ASCII Animation Viewer</h1>
-        <textarea id="mytextarea" name="txtinput" rows="20" cols="80"></textarea>
-        <div class="controls-section">
-            <fieldset>
-                <legend>Play controls:</legend>
-                <button id="btnstart">Start</button>
-                <button id="btnstop">Stop</button>
-            </fieldset>
-            <fieldset>
-                <legend>Animation:</legend>
-                <select id="ddlanimations">
-                    <option value="" selected>
-                        Blank
-                    </option>
-                    <option value="Exercise">
-                        Exercise
-                    </option>
-                    <option value="Juggler">
-                        Juggler
-                    </option>
-                    <option value="Bike">
-                        Bike
-                    </option>
-                    <option value="Dive">
-                        Dive
-                    </option>
-                    <option value="Custom">
-                        Custom
-                    </option>
-                </select>
-            </fieldset>
-            <fieldset>
-                <legend>Size:</legend>
-                <!-- Tiny (7pt), Small (10pt), Medium (12pt), Large (16pt), Extra Large (24pt), XXL (32pt) -->
-                <select id="ddlsizes">
-                    <option value="7pt">
-                        Tiny
-                    </option>
-                    <option value="10pt">
-                        Small
-                    </option>
-                    <option value="12pt" selected>
-                        Medium
-                    </option>
-                    <option value="16pt">
-                        Large
-                    </option>
-                    <option value="24pt">
-                        Extra Large
-                    </option>
-                    <option value="32pt">
-                        XXL
-                    </option>
-                </select>
-            </fieldset>
-            <fieldset>
-                <legend>Speed:</legend>
-                <input type="checkbox" id="chbspeed" name="chbspeed">
-                <label for="chbspeed">Turbo</label>
-            </fieldset>
+    <div class="box">
+        <h1>CSE 190 M ASCII Animation Viewer</h1>
+        <div class="playground">
+            <textarea id="textarea"></textarea>
+            <div class="contoller">
+                <div class="box_div">
+                    <h6>Play Control :</h6>
+                    <button type="button" id="start">Start</button>
+                    <button type="button" id="stop" disabled>Stop</button>
+                </div>
+                <div class="box_div">
+                    <h6>Animation :</h6>
+                    <select id="animation"> 
+                        <option value="blank">Blank</option>
+                        <option value="exercise">Exercise</option>
+                        <option value="juggler">Juggler</option>
+                        <option value="bike">Bike</option>
+                        <option value="dive">dive</option>
+                        <option value="custom">Custom</option>
+
+                   </select>
+                </div>
+
+                <div class="box_div ">
+                    <h6>Size :</h6>
+                    <select name="size" id="size">
+						<option value="7">Tiny </option>
+						<option value="10">Small </option>
+						<option value="12" selected>Medium </option>
+						<option value="16">Large </option>
+						<option value="24"> Extra Large </option>
+						<option value="32">XXL </option>
+					</select>
+                </div>
+                <div class="box_div ">
+                    <h6>Speed :</h6>
+                    <input value="1" id="speed" type="checkbox" />Turbo
+                </div>
+
+            </div>
+
         </div>
     </div>
-    <div class="validator">
-        <a href="https://validator.w3.org/check?uri=https://afeworkt.github.io/cs472/7ascii/ascii.html">
-            <img src="https://afeworkt.github.io/cs472/images/w3c-html.png" alt="html validator">
-        </a>
 
-    </div>
-    <div class="validator">
-        <a href="http://jigsaw.w3.org/css-validator/validator?uri=https://afeworkt.github.io/cs472/7ascii/ascii.css">
-            <img src="https://afeworkt.github.io/cs472/images/w3c-css.png" alt="css validator">
-        </a>
-    </div>
-    <div class="validator">
-        <a href="https://www.jslint.com/">
-            <img  src="https://afeworkt.github.io/cs472/images/jscheck.png"
-                alt="Valid JS!" >
-        </a>
-    </div>
+
+    <footer>
+        <div style="margin-top: 10px; text-align: center; font-size: 9pt; font-family: Verdana; color: rgb(39, 211, 111);">
+
+            <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fabdiwjilo.github.io%2FJavascript-and-ASCII-Animation-webpage%2Findex.html">
+                <img alt="link image" src="https://manalabs.org/img/w3c-html.png" />
+            </a>
+            <a href="http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fabdiwjilo.github.io%2FJavascript-and-ASCII-Animation-webpage%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
+                <img alt="link image" src="https://manalabs.org/img/w3c-css.png" />
+            </a>
+            <a href="#">
+                <img src="./jslint.png" alt="JavaScript Lint">
+            </a>
+            <hr style="text-align: center; width: 50%;"> Copyright ©2021 Agegnehu shita. All rights reserved.<br>
+            <p>Fairfield, Iowa, USA</p>
+        </div>
+    </footer>
+
+
+    <script src="javascript/animation.js"></script>
+    <script src="javascript/ascii.js"></script>
+
 </body>
 
 </html>
