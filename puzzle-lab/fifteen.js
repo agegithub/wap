@@ -10,8 +10,7 @@ $(document).ready(function() {
       var num = 1;
       for (var i = 0; i < rows_columns; i++) {
         for (var j = 0; j < rows_columns; j++) {
-        
-          let content=num++;
+        let content=num++;
           var tile = document.createElement("div");
           tile.classList.add("puzzlepiece");
           tile.style.left = 100 * j + "px";

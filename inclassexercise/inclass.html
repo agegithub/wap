@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>text demo</title>
+<style>
+p {
+color: blue;
+margin: 8px;
+}
+span {
+color: red;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+<p><span>Test</span> Paragraph.</p>
+<p></p>
+<script>
+
+    var firstParagraph=$('body p:first-child');
+    const firstParagraphContent=firstParagraph.html();
+    firstParagraph.html('');
+    var secondParagraph=$('body p:last-child');
+    secondParagraph.append(firstParagraphContent);
+    $("p span, p").css({"color": "inherit"});
+
+</script>
+</body>
+</html>
