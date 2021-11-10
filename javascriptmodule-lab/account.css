@@ -1,22 +1,14 @@
-.form {
-    width: 500px;
-    background-color: #fff;
-    padding: 0 20px 20px;
-    margin: 120px auto 120px;
-    border-radius: 5px;
-    box-shadow: 1px 2px 2px 1px #dedada;
-}
-.form .form-body {
-    display:flex;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    text-align: center;
+    
+    ;
 }
 
-.form-body .form-label {
-    font-weight: bold;
-    width: 150px;
-}
-
-.form-body .form-input {
-    flex-grow: 1;
+.footer {
+    text-align: center;
+    font-size: 9pt;
+    font-family: Verdana;
+    margin-top: 100px;
 }

@@ -3,30 +3,46 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Bank Accounts</title>
-    <link rel="stylesheet" href="accounts.css">
-    <script src="accounts.js"></script>
+
+    <link href="account.css" rel="stylesheet" />
+    <script src="account.js" ></script>
+    <title>Modules and Closure</title>
 </head>
 
 <body>
-    <div class="form">
-        <h2>Bank Accounts</h2>
-        <div class="form-body">
-            <label for="accountname" class="form-label">Account Name:</label>
-            <input type="text" id="accountname" name="accountname" class="form-input">
+    <div class="wrapper">
+        <div class="header">
+            <button id="clickme-me-btn" onclick="rudyTimer();"> Click Me!</button>
         </div>
-
-        <div class="form-body">
-            <label for="deposite" class="form-label">Deposite</label>
-            <input type="text" id="deposite" name="deposite" class="form-input">
-        </div>
-
-        <button id="btnaddaccount">Create New Account</button>
-        <div class="form-body">
-            <textarea id="myaccounts" rows="10" cols="60" disabled></textarea>
+        <div class="middle">
+            <label> Account Name : </label> <input id="name" type="text"> 
+            <p> </p>
+            <label> Deposit : </label> <input id="deposit" type="text"> 
+            <p> </p>
+            <button id="create-account-btn"> Create New Account</button>
+            <p> </p>
+            <textarea id="txtarea" cols="50" rows="10"> </textarea>
         </div>
     </div>
-    <span id="output"></span>
+
+    <br />
+    <footer>
+        <div class="footer">
+
+            <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fabdiwjilo.github.io%2FModules-and-Closure%2Findex.html">
+                <img alt="link image" src="https://manalabs.org/img/w3c-html.png" />
+            </a>
+            <a href="http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fabdiwjilo.github.io%2FModules-and-Closure%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
+                <img alt="link image" src="https://manalabs.org/img/w3c-css.png" />
+            </a>
+            <a href="#">
+                <img src="jshint-small.png" alt="JavaScript Lint">
+            </a>
+            <hr style="text-align: center; width: 50%;"> Copyright ©2021, All rights reserved.<br>
+            <p>Fairfield, Iowa, USA</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

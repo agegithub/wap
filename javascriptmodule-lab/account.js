@@ -1,41 +1,37 @@
-var accountInfoList=[];
-var myAccModule=(function(){
-    var account={
-        accountName: '',
-        deposite: 0
-    };
-    var createAccount=function(accountName, deposite) {
-        var newAcc=Object.create(account);
-         newAcc.accountName=accountName;
-         newAcc.deposite=deposite;
-         return newAcc;
-    }
-    return {
-        createAccount:createAccount
-    };
 
-})();
+   
+window.onload = function() {
+    document.getElementById("create-account-btn").onclick = function() {
+        var accountInfoList = [];
 
-window.onload=function(){
-    var btnaddaccount=document.getElementById("btnaddaccount");
-    btnaddaccount.onclick=onAddAccountClicked;
-}
-function onAddAccountClicked(){
-    let accountNameElement=document.getElementById("accountname");
-    let depositeElement=document.getElementById("deposite");
-    const accountName=accountNameElement.value.trim();
-    const deposite=depositeElement.value.trim();
+        var nametxt = document.getElementById("name").value;
+        var deposittxt = document.getElementById("deposit").value;
+        var textAreatxt = document.getElementById("txtarea");
 
-    if(accountName===''||deposite===''){
-        alert("Please enter account name and deposite");
-        return;
-    }
-    var newAcc=myAccModule.createAccount(accountName,deposite);
-    accountInfoList.push(newAcc);
-    let mytextarea=document.getElementById("myaccounts");
-    mytextarea.value='';
-    for(let i=0;i<accountInfoList.length;i++){
-        mytextarea.value +="\n Account name: "+accountInfoList[i].accountName +" Balance: "+accountInfoList[i].deposite;
+        var account;
+        (function() {
+            function createAcount(name, deposit) {
+                return {
+                    name,
+                    deposit
+                }
+            }
+            account = createAcount(nametxt, deposittxt);
+        })();
+
+        accountInfoList.push(account);
+
+        for (let i = 0; i < accountInfoList.length; i++) {
+            textAreatxt.value += "Name : " + accountInfoList[i].name + "Deposit : " + accountInfoList[i].deposit + "\n ";
+        }
+
     }
 
 }
+
+var rudyTimer = (function() {
+    setInterval(function() {
+        alert("Rudy");
+    }, 1000);
+
+});
