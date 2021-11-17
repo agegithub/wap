@@ -1,0 +1,27 @@
+{
+  "name": "wap",
+  "version": "1.0.0",
+  "description": "Dictionary project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agegithub/wap.git"
+  },
+  "keywords": [
+    "online",
+    "dictionary"
+  ],
+  "author": "Agegnehu Shita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agegithub/wap/issues"
+  },
+  "homepage": "https://github.com/agegithub/wap#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.6.0"
+  }
+}
